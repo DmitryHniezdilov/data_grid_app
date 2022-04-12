@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dataset",
+  "info": {
+    "singularName": "data",
+    "pluralName": "dataset",
+    "displayName": "Data",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "data": {
+      "type": "json",
+      "required": true
+    },
+    "chapt": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "dataset"
+    }
+  }
+}
